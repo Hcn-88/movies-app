@@ -1,1 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body { 
+    min-height: 100%; 
+}
+
+body {
+    background: #eee;
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+.container {
+    width: 80%;
+    margin-inline: auto;
+}
+
+.btns {
+    margin-block: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btns button {
+    padding: 8px 6px;
+}
+
+button {
+    background: #73b68e;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+} 
+
+button:hover {
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.removeBtn {
+    background: #d34848;
+}
+
+.fa-star {
+    color: #f5d72e;
+    margin-left: 6px;
+}
+
+p{
+    font-size: 1.1rem;
+    padding-block: 8px;
+    text-align: center;
+    border: 2px solid silver;
+    outline: 2px solid #818181;
+    outline-offset: 3px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+@media screen and (max-width: 670px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding-inline: 10px;
+    }
+}

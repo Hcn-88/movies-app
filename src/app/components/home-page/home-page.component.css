@@ -1,0 +1,102 @@
+.btns {
+    gap: 10px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+section {
+    display: flex;
+    gap: 30px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    padding: 20px 10px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+.image {
+    width: 35%;
+}
+
+img {
+    width: 100%;
+    aspect-ratio: 2/3;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.title {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.buttons button {
+    width: 50%;
+    font-size: 1.1rem;
+    padding-block: 8px;
+}
+
+p {
+    width: 50%;
+    margin-block: 10px;
+}
+
+@media screen and (max-width: 883px) {
+    h1 {
+        font-size: 16px;
+    }
+    p, .buttons button {
+        font-size: .8rem;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .title {
+        width: 100%;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 565px) {
+    .btns {
+        justify-content: center;
+    }
+    section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 6px;
+    }
+    .image {
+        width: 90%;
+    }
+    .buttons button, p {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 270px) {
+    .btns {
+        flex-direction: column;
+    }
+}

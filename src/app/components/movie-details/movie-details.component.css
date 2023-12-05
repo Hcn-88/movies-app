@@ -1,0 +1,64 @@
+section {
+    display: flex;
+    margin-block: 30px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.image {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.image img {
+    width: 100%;
+    aspect-ratio: 2/3;
+}
+
+.image button {
+    padding-block: 8px;
+}
+
+.trailer {
+    height: 500px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    h1 {
+        font-size: 16px;
+    }
+    p, .buttons button {
+        font-size: .8rem;
+    }
+    .image {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .btns {
+        justify-content: center;
+    }
+    section {
+        flex-direction: column-reverse;
+    }
+    .image {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .btns button {
+        width: 100%;
+    }
+    .trailer {
+        height: 350px;
+    }
+}
