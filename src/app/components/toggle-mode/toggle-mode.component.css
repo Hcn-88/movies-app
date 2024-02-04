@@ -1,0 +1,26 @@
+section {
+    width: 55px;
+    height: 25px;
+    margin-top: 10px;
+    position: relative;
+    cursor: pointer;
+    padding: 2px 5px;
+    border: 1px solid #4b6272;
+    border-radius: 20px;
+    background: #edeff1;
+}
+
+.toggle {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    background: #4b6272;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    transition: all .3s ease-in-out;
+}
+
+.toRight {
+    right: 30px;
+}

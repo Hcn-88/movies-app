@@ -1,29 +1,42 @@
-<div class="container">
-    <div class="btns">
-        <button (click)="sortTitleOnClick()">Sort by Title</button>
-        <button (click)="sortReleaseYearOnClick()">Sort by Release Date</button>
-    </div>
-    <div class="details">
-        <section *ngFor="let movie of movieData">
-            <div class="image">
-                <img title="Click for more details"  src={{movie.imagePath}} alt={{movie.title}} [routerLink]="['/movie-detail/{{movie.id}}']" (click)="getMovieId(movie.id)">
+<div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="15px" fxLayoutAlign="end none">
+    <button mat-raised-button color="primary" (click)="sortTitleOnClick()">Sort by Title</button>
+    <button mat-raised-button color="primary" (click)="sortReleaseYearOnClick()">Sort by Release Date</button>
+</div>
+<div class="wrapper">
+    @for(movie of movieData; track movie.id) {
+        <section>
+            <div>
+                <img title="Click for more details" [src]="movie.imagePath" [alt]="movie.title"
+                [routerLink]="['/movie-detail/{{ movie.id }}']" (click)="getMovieId(movie.id)">
             </div>
-            <div class="title">
-                <div>
-                    <h1><strong>{{movie.title}}</strong></h1>
-                    <h1><strong>Coming on:</strong> {{movie.releaseDate}}</h1>
+            <div>
+                <div class="detail" fxLayout fxLayoutAlign="space-between center">
+                    <h2><strong>{{ movie.title }}</strong></h2>
+                    <div fxLayout fxLayoutAlign="none center">
+                        <mat-icon aria-hidden="false" fontIcon="star"></mat-icon>
+                        <span>{{ movie.rating }}/10</span>
+                    </div>
                 </div>
-                <div class="buttons">
-                    <button [disabled]="isInWatchlist(movie)" (click)="addMovie(movie)">Add to Watchlist</button>
-                    <button class="removeBtn" [disabled]="!isInWatchlist(movie)" (click)="removeMovie(movie.title)">Remove from Watchlist</button>
-                </div>
-                <div>
-                    <p *ngIf="isInWatchlist(movie)">On my Watchlist</p>
+                <mat-divider></mat-divider>
+                <div class="detail" fxLayout fxLayoutAlign="space-between center">
+                    <p>{{ movie.releaseDate }}</p>
+                    <p>{{ movie.duration }}</p>
                 </div>
             </div>
-            <div class="rate">
-                <h3>{{movie.rating}}<i class="fa fa-star"></i></h3>
-            </div>
+            <mat-divider></mat-divider>
+            @if (isInWatchlist(movie)) {
+                <div class="detail" fxLayout fxLayoutAlign="space-between center">
+                    <span><strong>Already watched it? Remove it from your watchlist</strong></span>
+                    <button mat-raised-button color="warn" (click)="removeMovie(movie.id)">Remove</button>
+                </div>
+            } @else {
+                <div class="detail" fxLayout fxLayoutAlign="space-between center">
+                    <span><strong>Like it? Add it to your watchlist</strong></span>
+                    <button mat-raised-button  color="primary" (click)="addMovie(movie)">Add</button>
+                </div>
+            }
         </section>
-    </div>
+        } @empty {
+            <h1>No movies available</h1>
+        }
 </div>

@@ -4,9 +4,9 @@ import { Film } from '../../../Film';
 @Injectable({
   providedIn: 'root'
 })
-export class MovieServiceService {
+export class MovieService {
 
-  movies = [
+  movies: Film[] = [
     {
       id: 1,
       imagePath: "../../assets/images/Tenet.png",
@@ -69,7 +69,8 @@ export class MovieServiceService {
   getMovieDetails(movieId: number) {
     const movie = this.movies.find(movie => movie.id === movieId);
     this.selectedMovie = movie;
-  }
+  };
 
-  constructor() { }
-}
+  constructor() {};
+
+};

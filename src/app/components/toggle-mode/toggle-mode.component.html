@@ -1,0 +1,9 @@
+<section fxLayout fxLayoutAlign="space-between center" (click)="toggleDarkMode()">
+    <div>
+        <span>🌜</span>
+    </div>
+    <div>
+        <span>🌞</span>
+    </div>
+    <div [ngClass]="{'toRight': toggled, 'toggle': true}"></div>
+</section>
